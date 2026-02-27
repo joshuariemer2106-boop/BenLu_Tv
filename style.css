@@ -15,6 +15,12 @@ body {
     line-height: 1.6;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 /* Header Styles */
 .header {
     background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
@@ -30,14 +36,22 @@ body {
 }
 
 .logo img {
-    height: 60px;
+    height: 50px;
     width: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
 nav ul li a {
@@ -69,6 +83,18 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
+.discord-btn {
+    background: #5865F2;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.discord-btn:hover {
+    background: #4752C4;
+    box-shadow: 0 0 20px rgba(88, 101, 242, 0.5);
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -92,6 +118,11 @@ nav ul li a:hover::after {
     bottom: 0;
     background: radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
     pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
@@ -161,20 +192,19 @@ nav ul li a:hover::after {
     font-size: 1.1rem;
     color: #b0b0b0;
     max-width: 800px;
-    margin: 0 auto 20px;
+    margin: 0 auto 40px;
     line-height: 1.8;
 }
 
-/* Features */
-.features {
+.about-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     max-width: 1000px;
-    margin: 50px auto 0;
+    margin: 0 auto;
 }
 
-.feature {
+.about-item {
     background: linear-gradient(135deg, #1a1a2e 0%, #0f0f0f 100%);
     padding: 30px;
     border-radius: 15px;
@@ -182,27 +212,74 @@ nav ul li a:hover::after {
     border: 1px solid #2a2a4e;
 }
 
-.feature:hover {
+.about-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
 }
 
-.feature h3 {
+.about-item h3 {
     color: #00ffff;
     font-size: 1.3rem;
     margin-bottom: 15px;
 }
 
-.feature p {
+.about-item p {
     color: #b0b0b0;
     font-size: 1rem;
     margin: 0;
 }
 
+/* Services Section */
+.services {
+    padding: 100px 40px;
+    background: linear-gradient(180deg, #1a1a2e 0%, #0f0f0f 100%);
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #9146ff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f0f0f 100%);
+    padding: 40px 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #2a2a4e;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(145, 70, 255, 0.2);
+}
+
+.service-card h3 {
+    color: #9146ff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #b0b0b0;
+    font-size: 1rem;
+}
+
 /* Twitch Section */
 .twitch {
     padding: 100px 40px;
-    background: linear-gradient(180deg, #1a1a2e 0%, #0f0f0f 100%);
+    background: linear-gradient(180deg, #0f0f0f 0%, #1a1a2e 100%);
     text-align: center;
 }
 
@@ -231,6 +308,9 @@ nav ul li a:hover::after {
     background: rgba(255, 68, 68, 0.1);
     border-radius: 10px;
     margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #stream-info.live {
@@ -282,7 +362,7 @@ nav ul li a:hover::after {
 /* Contact Section */
 .contact {
     padding: 100px 40px;
-    background: linear-gradient(180deg, #0f0f0f 0%, #0a0a0a 100%);
+    background: linear-gradient(180deg, #1a1a2e 0%, #0a0a0a 100%);
     text-align: center;
 }
 
@@ -298,6 +378,24 @@ nav ul li a:hover::after {
     font-size: 1.1rem;
     color: #b0b0b0;
     margin-bottom: 15px;
+}
+
+.contact-info {
+    margin-top: 30px;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #00ffff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
 }
 
 /* Footer */
@@ -317,14 +415,23 @@ nav ul li a:hover::after {
 @media (max-width: 768px) {
     .header {
         padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
     }
 
     .logo img {
         height: 40px;
     }
 
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
     nav ul {
         gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     nav ul li a {
@@ -340,12 +447,18 @@ nav ul li a:hover::after {
     }
 
     .about h2,
+    .services h2,
     .twitch h2,
     .contact h2 {
         font-size: 2rem;
     }
-    
-    .twitch, .about, .contact {
+
+    .twitch, .about, .services, .contact {
         padding: 60px 20px;
+    }
+
+    .about-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
     }
 }

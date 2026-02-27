@@ -3,62 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BenLU_Tv</title>
+    <title>BenLU TV - Gaming & Streaming</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
         <nav>
-            
+            <div class="logo">
+                <img src="img/benlu_tv_logo.png" alt="BenLU TV Logo">
+            </div>
             <ul>
                 <li><a href="#home">Startseite</a></li>
                 <li><a href="#about">Über uns</a></li>
-                <li><a href="https://discord.gg/Js8dCHXk" target="_blank">Discord</a></li>
+                <li><a href="#twitch">Streams</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="https://discord.gg/Js8dCHXk" target="_blank" class="discord-btn">Discord</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home" class="hero">
-        <h1>Willkommen bei BenLU TV</h1>
-        <p>Deine ultimative Destination für Gaming-Streams und Unterhaltung in München RP.</p>
-        <a href="#twitch" class="cta-button">Jetzt Entdecken</a>
+        <div class="hero-content">
+            <h1>Willkommen bei BenLU TV</h1>
+            <p>Deine ultimative Plattform für Gaming-Streams und Unterhaltung</p>
+            <a href="#twitch" class="cta-button">Jetzt Streamen</a>
+        </div>
     </section>
 
     <section id="about" class="about">
-        <h2>Über BenLU TV</h2>
-        <p>BenLU TV ist deine Anlaufstelle für hochwertige Gaming-Streams und RP-Inhalte. Wir bieten eine breite Palette an Videos, Shows und Unterhaltung, um dich engagiert und unterhalten zu halten.</p>
-        <p>Unsere Mission ist es, ein immersives Erlebnis mit modernster Technologie und benutzerfreundlichen Schnittstellen zu bieten, speziell für die Gaming-Community in München RP.</p>
-        <div class="features">
-            <div class="feature">
-                <h3>Live Streams</h3>
-                <p>Erlebe spannende Gaming-Sessions in Echtzeit</p>
-            </div>
-            <div class="feature">
-                <h3>Highlights & Clips</h3>
-                <p>Die besten Momente aus unseren Streams</p>
-            </div>
-            <div class="feature">
-                <h3>Community</h3>
-                <p>Sei Teil der München RP Gaming-Community</p>
+        <div class="container">
+            <h2>Über BenLU TV</h2>
+            <p>BenLU TV ist deine Anlaufstelle für hochwertige Gaming-Inhalte. Wir bieten eine breite Palette an Streams, Videos und Community-Features, um dich zu unterhalten und zu begeistern.</p>
+            <div class="about-grid">
+                <div class="about-item">
+                    <h3>Live-Streams</h3>
+                    <p>Erlebe spannende Gaming-Sessions in Echtzeit</p>
+                </div>
+                <div class="about-item">
+                    <h3>Community</h3>
+                    <p>Werde Teil unserer Gaming-Community</p>
+                </div>
+                <div class="about-item">
+                    <h3>Qualität</h3>
+                    <p>Hochwertige Inhalte und professionelle Produktion</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="twitch" class="twitch">
-        <h2>Twitch Streams & Clips</h2>
-        <div id="live-stream">
-            <h3>Live Stream</h3>
-            <div id="stream-info">Überprüfe auf Live-Stream...</div>
-            <div id="stream-embed"></div>
+        <div class="container">
+            <h2>Twitch Streams & Clips</h2>
+            <div id="live-stream">
+                <h3>Live Stream</h3>
+                <div id="stream-info">Überprüfe auf Live-Stream...</div>
+                <div id="stream-embed"></div>
+            </div>
+            <div id="clips">
+                <h3>Neueste Clips</h3>
+                <div id="clips-list">Lade Clips...</div>
+            </div>
         </div>
-        <div id="clips">
-            <h3>Neueste Clips</h3>
-            <div id="clips-list">Lade Clips...</div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <p>Hast du Fragen oder Feedback? Kontaktiere uns!</p>
+            <div class="contact-info">
+                <p><strong>E-Mail:</strong> info@benlutv.de</p>
+                <p><strong>Discord:</strong> <a href="https://discord.gg/Js8dCHXk" target="_blank">discord.gg/Js8dCHXk</a></p>
+                <p><strong>Twitch:</strong> <a href="https://twitch.tv/benlu_tv" target="_blank">twitch.tv/benlu_tv</a></p>
+            </div>
         </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2023 BenLU TV. Alle Rechte vorbehalten.</p>
+        <div class="container">
+            <p>&copy; 2023 BenLU TV. Alle Rechte vorbehalten.</p>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
