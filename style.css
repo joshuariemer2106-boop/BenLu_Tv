@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 255, 255, 0.1);
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: #00ffff;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0f0f0f 0%, #16213e 50%, #0f0f0f 100%);
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
+    to {
+        text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    }
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #b0b0b0;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0a0a0a;
+    background: linear-gradient(90deg, #00ffff, #00cccc);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+/* About Section */
+.about {
+    padding: 100px 40px;
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%);
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.about p {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.8;
+}
+
+/* Features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 50px auto 0;
+}
+
+.feature {
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f0f0f 100%);
+    padding: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #2a2a4e;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+}
+
+.feature h3 {
+    color: #00ffff;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.feature p {
+    color: #b0b0b0;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Twitch Section */
+.twitch {
+    padding: 100px 40px;
+    background: linear-gradient(180deg, #1a1a2e 0%, #0f0f0f 100%);
+    text-align: center;
+}
+
+.twitch h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #9146ff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+#live-stream {
+    margin-bottom: 50px;
+}
+
+#live-stream h3, #clips h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #00ffff;
+}
+
+#stream-info {
+    font-size: 1.2rem;
+    color: #ff4444;
+    padding: 20px;
+    background: rgba(255, 68, 68, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#stream-info.live {
+    background: rgba(0, 255, 0, 0.1);
+    color: #00ff00;
+}
+
+#stream-embed {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#clips-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.clip-item {
+    background: #1a1a2e;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.clip-item:hover {
+    transform: scale(1.05);
+}
+
+.clip-item iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+}
+
+.clip-title {
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+/* Contact Section */
+.contact {
+    padding: 100px 40px;
+    background: linear-gradient(180deg, #0f0f0f 0%, #0a0a0a 100%);
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ff00ff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+.footer {
+    padding: 30px;
+    background: #0a0a0a;
+    text-align: center;
+    border-top: 1px solid #1a1a2e;
+}
+
+.footer p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .about h2,
+    .twitch h2,
+    .contact h2 {
+        font-size: 2rem;
+    }
+    
+    .twitch, .about, .contact {
+        padding: 60px 20px;
+    }
+}
